@@ -37,10 +37,17 @@
 
     /* Subtle darkening overlay so UI stays readable */
     .hero-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.38);
-      z-index: -1;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.5) 0%,   /* Darker at the top bar */
+    rgba(0,0,0,0) 20%,    /* Transparent quickly */
+    rgba(0,0,0,0) 80%,    /* Transparent through the middle */
+    rgba(0,0,0,0.5) 100%  /* Darker at the email bar */
+  );
+  z-index: -1;
+}
     }
     /* ─────────────────────────────────────────────────────────── */
 
